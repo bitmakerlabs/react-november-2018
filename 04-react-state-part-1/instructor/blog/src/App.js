@@ -20,9 +20,14 @@ class Post extends Component {
     this.updateBody(newBody)
   }
 
-  changeBodyFromInput = (event) => {
-    let newBody = event.target.value
-    this.updateBody(newBody)
+  // changeBodyFromInput = (event) => {
+  //   let newBody = event.target.value
+  //   this.updateBody(newBody)
+  // }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.updateBody(event.target.elements.body_input.value)
   }
 
   render() {
@@ -44,7 +49,11 @@ class Post extends Component {
         <p>{ this.state.body }</p>
 
         <button onClick={ this.changeBodyFromButton }>Edit body</button>
-        <input type="text" value={ this.state.body } onChange={ this.changeBodyFromInput } />
+
+        <form onSubmit={ this.handleSubmit }>
+          <input type="text" name="body_input" />
+          <input type="submit" value="Submit" />
+        </form>
 
         <h3>Comments</h3>
         { allComments }
