@@ -5,12 +5,33 @@ import ListItem from './ListItem'
 class MyList extends Component {
 
   state = {
-    list: ['Buy Ice Cream', 'Eat Ice Cream', 'Go to the Gym']
+    list: ['Buy Ice Cream', 'Eat Ice Cream', 'Go to the Gym'],
+    newItem: ''
   }
 
   clearList = () => {
     this.setState({
       list: []
+    })
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      newItem: e.target.value
+    })
+  }
+
+  addItem = (e) => {
+    e.preventDefault()
+
+    // This won't work as you cannot modify state directly
+    //this.state.list.push(this.state.newItem)
+    const newList = [...this.state.list]
+    newList.push(this.state.newItem)
+
+    this.setState({
+      list: newList,
+      newItem: ''
     })
   }
 
@@ -26,6 +47,15 @@ class MyList extends Component {
         <ul>
           { allItems }
         </ul>
+
+        <form>
+          <input type="text"
+            placeholder="Type an item here"
+            value={ this.state.newItem }
+            onChange={ this.handleChange }
+          />
+          <button onClick={ this.addItem } >Add it!</button>
+        </form>
 
         <button onClick={ this.clearList }>Finished the List!</button>
       </div>
