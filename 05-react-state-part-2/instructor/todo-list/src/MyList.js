@@ -35,11 +35,30 @@ class MyList extends Component {
     })
   }
 
+  handleLink = (e) => {
+    const newList = [...this.state.list]
+    newList.splice(e.target.id, 1)
+
+    this.setState({
+      list: newList
+    })
+  }
+
   render() {
 
-    let allItems = this.state.list.map( (item, index) =>
-      <ListItem key={ index } item={ item } />
-    )
+    // let allItems = this.state.list.map( (item, index) =>
+    //   <ListItem key={ index } item={ item } />
+    // )
+
+    let allItems = this.state.list.map( (item, index) => {
+      return(
+        <li key={index}>
+          { item }
+          &nbsp;
+          <a id={ index } onClick={ this.handleLink }>X</a>
+        </li>
+      )
+    })
 
     return (
       <div>
