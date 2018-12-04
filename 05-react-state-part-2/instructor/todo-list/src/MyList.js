@@ -3,10 +3,21 @@ import React, { Component } from 'react'
 import ListItem from './ListItem'
 
 class MyList extends Component {
+
+  state = {
+    list: ['Buy Ice Cream', 'Eat Ice Cream', 'Go to the Gym']
+  }
+
+  clearList = () => {
+    this.setState({
+      list: []
+    })
+  }
+
   render() {
 
-    let allItems = this.props.items.map( (item, index) =>
-      <ListItem keys={ index } item={ item } />
+    let allItems = this.state.list.map( (item, index) =>
+      <ListItem key={ index } item={ item } />
     )
 
     return (
@@ -15,6 +26,8 @@ class MyList extends Component {
         <ul>
           { allItems }
         </ul>
+
+        <button onClick={ this.clearList }>Finished the List!</button>
       </div>
     );
   }
