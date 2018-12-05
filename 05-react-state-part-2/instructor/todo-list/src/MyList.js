@@ -35,9 +35,9 @@ class MyList extends Component {
     })
   }
 
-  handleLink = (e) => {
+  handleLink = (index, e) => {
     const newList = [...this.state.list]
-    newList.splice(e.target.id, 1)
+    newList.splice(index, 1)
 
     this.setState({
       list: newList
@@ -55,7 +55,7 @@ class MyList extends Component {
         <li key={index}>
           { item }
           &nbsp;
-          <a id={ index } onClick={ this.handleLink }>X</a>
+          <a onClick={ (e) => { this.handleLink(index, e) } }>X</a>
         </li>
       )
     })
