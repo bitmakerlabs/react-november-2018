@@ -1,0 +1,16 @@
+
+1. Put each component into its own file
+
+2. States and Props are NOT the same thing
+  - State represents the state of our user interface.
+    Any value in your component that will change uses state.
+  - Props are supplied by parent components.
+    Parents can change child component props, but components
+    never change their own props.
+
+3. States can only be changed by setState()
+  - setState changes the virtual DOM
+  - virtual DOM is diffed against actual DOM (on the browser)
+  - React tells browser to change only what needs changing
+
+4. Components that don't have state can be declared as Functional components
