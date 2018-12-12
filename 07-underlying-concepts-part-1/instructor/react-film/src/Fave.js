@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 
 class Fave extends Component {
-
-  state = {
-    isFave: false
-  }
-
   handleClick = (e) => {
-    this.setState({ isFave: !this.state.isFave })
     e.stopPropagation()
+    console.log('Handling Fave Click!');
+    // Add this line. You'll call the function passed through props.
+    this.props.onFaveToggle();
   }
 
   render() {
-    const isFave = this.state.isFave ? 'remove_from_queue' : 'add_to_queue'
+    const isFave = this.props.isFave ? 'remove_from_queue' : 'add_to_queue'
 
     return (
       <div className={ `film-row-fave ${ isFave }` } onClick={ this.handleClick }>
