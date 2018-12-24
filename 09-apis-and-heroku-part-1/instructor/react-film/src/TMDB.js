@@ -1,5 +1,5 @@
 const TMDB = {
-  api_key: '<REPLACE_THIS_WITH_TMDB_API_KEY>',
+  api_key: '1ec85fccfa342d6087f111eb25a1019d',
   films: [
     {
       "id": 346364,
