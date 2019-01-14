@@ -57,3 +57,5 @@ http://s3.amazonaws.com/react-ga/content/05-React-Router/06-section-recap-exerci
 http://s3.amazonaws.com/react-ga/content/06-Applied-Practice/01-exploring-documentation-lecture.md.pdf
 
 http://s3.amazonaws.com/react-ga/content/06-Applied-Practice/02-exploring-documentation-exercise.md.pdf
+
+http://s3.amazonaws.com/react-ga/content/06-Applied-Practice/06-final-project-prompt.md.html
