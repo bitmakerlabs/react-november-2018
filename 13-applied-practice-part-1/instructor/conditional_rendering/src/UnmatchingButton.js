@@ -2,7 +2,7 @@ import React from 'react'
 
 const UnmatchingButton = props =>
   <button onClick={ props.onClick }>
-    Show unmatching fruits
+    Show matching fruits
   </button>
 
 export default UnmatchingButton

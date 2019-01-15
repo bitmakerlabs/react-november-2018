@@ -11,6 +11,15 @@ class FruitContainer extends Component {
     fruitsToDisplay: this.props.fruits,
     unmatchedFruits: [],
     filterValue: '',
+    isMatching: false
+  }
+
+  handleMatchingClick = () => {
+    this.setState({ isMatching: true })
+  }
+
+  handleUnmatchingClick = () => {
+    this.setState({ isMatching: false })
   }
 
   // Do not modify this handleFilterChange method
@@ -36,8 +45,17 @@ class FruitContainer extends Component {
   }
 
   render() {
-    const fruitChoice = this.state.fruitsToDisplay
-    const button = <MatchingButton onClick={ this.handleMatchingClick } />
+    let button = null
+    let fruitChoice = null
+
+    if (this.state.isMatching) {
+      button = <UnmatchingButton onClick={ this.handleUnmatchingClick } />
+      fruitChoice = this.state.unmatchedFruits
+    }
+    else {
+      button = <MatchingButton onClick={ this.handleMatchingClick } />
+      fruitChoice = this.state.fruitsToDisplay
+    }
 
     return (
       <div>
