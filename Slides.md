@@ -53,3 +53,9 @@ http://s3.amazonaws.com/react-ga/content/05-React-Router/04-build-a-dentist-webs
 http://s3.amazonaws.com/react-ga/content/05-React-Router/05-build-a-dentist-website-part2-exercise.md.pdf
 
 http://s3.amazonaws.com/react-ga/content/05-React-Router/06-section-recap-exercise.md.pdf
+
+http://s3.amazonaws.com/react-ga/content/06-Applied-Practice/01-exploring-documentation-lecture.md.pdf
+
+http://s3.amazonaws.com/react-ga/content/06-Applied-Practice/02-exploring-documentation-exercise.md.pdf
+
+http://s3.amazonaws.com/react-ga/content/06-Applied-Practice/06-final-project-prompt.md.html
