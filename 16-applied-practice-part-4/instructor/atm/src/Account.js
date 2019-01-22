@@ -1,44 +1,43 @@
 import React, { Component } from 'react'
 
 class Account extends Component {
-
   state = {
     balance: 0,
-    value: ''
+    value: '',
   }
 
   handleOnChange = (e) => {
     const value = e.target.value
 
-    this.setState({value})
+    this.setState({ value })
   }
 
-  handleDepositClick = (e) => {
-    let value = parseInt(this.state.value) || 0
+  handleDepositClick = () => {
+    let value = parseInt(this.state.value, 10) || 0
     value = value > 0 ? value : 0
 
-    this.setState({
-      balance: this.state.balance + value,
-      value: ''
-    })
+    this.setState(prevState => ({
+      balance: prevState.balance + value,
+      value: '',
+    }))
   }
 
-  handleWithdrawClick = (e) => {
-    let value = parseInt(this.state.value) || 0
+  handleWithdrawClick = () => {
+    let value = parseInt(this.state.value, 10) || 0
     value = value > 0 ? value : 0
     value = value > this.state.balance ? this.state.balance : value
 
-    this.setState({
-      balance: this.state.balance - value,
-      value: ''
-    })
+    this.setState(prevState => ({
+      balance: prevState.balance - value,
+      value: '',
+    }))
   }
 
   render() {
-    let balanceClass = "balance"
+    let balanceClass = 'balance'
 
     if (this.state.balance === 0) {
-      balanceClass += " zero"
+      balanceClass += ' zero'
     }
 
     return (
@@ -49,9 +48,9 @@ class Account extends Component {
         <div className={balanceClass}>
           {this.state.balance}
         </div>
-        <input type="number" placeholder="Enter an amount" value={ this.state.value } onChange={ this.handleOnChange } />
-        <input type="button" value="Deposit" onClick={ this.handleDepositClick } />
-        <input type="button" value="Withdraw" onClick={ this.handleWithdrawClick }  />
+        <input type="number" placeholder="Enter an amount" value={this.state.value} onChange={this.handleOnChange} />
+        <input type="button" value="Deposit" onClick={this.handleDepositClick} />
+        <input type="button" value="Withdraw" onClick={this.handleWithdrawClick} />
       </div>
     )
   }
