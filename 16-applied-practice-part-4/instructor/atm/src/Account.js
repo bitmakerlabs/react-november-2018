@@ -22,6 +22,17 @@ class Account extends Component {
     })
   }
 
+  handleWithdrawClick = (e) => {
+    let value = parseInt(this.state.value) || 0
+    value = value > 0 ? value : 0
+    value = value > this.state.balance ? this.state.balance : value
+
+    this.setState({
+      balance: this.state.balance - value,
+      value: ''
+    })
+  }
+
   render() {
     let balanceClass = "balance"
 
@@ -39,7 +50,7 @@ class Account extends Component {
         </div>
         <input type="number" placeholder="Enter an amount" value={ this.state.value } onChange={ this.handleOnChange } />
         <input type="button" value="Deposit" onClick={ this.handleDepositClick } />
-        <input type="button" value="Withdraw" />
+        <input type="button" value="Withdraw" onClick={ this.handleWithdrawClick }  />
       </div>
     )
   }
