@@ -9,6 +9,7 @@ class Account extends Component {
 
   handleOnChange = (e) => {
     const value = e.target.value
+
     this.setState({value})
   }
 

@@ -15,7 +15,8 @@ const App = () => (
       </div>
     </div>
 
-    <Account name="checking" />
+    <Account name="Checkings" />
+    <Account name="Savings" />
   </div>
 )
 
