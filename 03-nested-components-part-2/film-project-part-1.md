@@ -14,7 +14,7 @@ Note, this is just the first phase of this project; the app won't be completed 
 
 ### Ready?
 
-OK. Start by [forking and cloning](https://git.generalassemb.ly/ga-wdi-exercises/react-film) the `react-film` repo.
+OK. Start by [forking and cloning](https://github.com/bitmakerlabs/react-film) the `react-film` repo.
 
 **Important**: After each step that follows, check your application to see how it looks before moving on. It's good practice to be sure your app is working correctly before adding new functionality.
 
